@@ -1,13 +1,16 @@
 #!/usr/bin/env zsh
 
-echo "###########Running all the tests###########"
+echo "########### Running all the tests ###########"
 pytest -s
 
-echo "###########Running the tests marked as smoke###########"
+echo "########### Running the tests marked as smoke ###########"
 pytest -m smoke
 
-echo "###########Checking test coverage###########"
+echo "########### Checking test coverage ###########"
 pytest --cov
 
-echo "###########Running the tests in parallel###########"
+echo "########### Running the tests in parallel ###########"
 pytest -n 4
+
+echo "########### Generating HTML report for Test Coverage ###########"
+coverage html
